@@ -14,6 +14,14 @@ class TemperatureConverterTest {
         assertEquals(0, testConverter.convert(32));
     }
 
+//    ************** Another way to do the params***************
+//    @Test
+//    void testFahrenheitToCelsius() {
+//        TemperatureConverter testConverter = new TemperatureConverter("F", "C");
+//        assertEquals(0, testConverter.convert(32));
+//    }
+
+
     @Test
     void testFahrenheitToKelvin() {
         String converting_from = "F";
