@@ -1,26 +1,26 @@
 package com.company;
 
 public class TemperatureConverter {
-    public String converting_from;
-    public String converting_to;
+    public String temperature_unit;
+    public String convert_to;
 
-    TemperatureConverter(String converting_from, String converting_to) {
-        this.converting_from = converting_from;
-        this.converting_to = converting_to;
+    TemperatureConverter(String temp_unit, String converting_to) {
+        temperature_unit = temp_unit;
+        convert_to = converting_to;
     }
 
     public double convert(double temp) {
-        if (converting_from.equals("C") && converting_to.equals("F")) {
+        if (temperature_unit.equals("C") && convert_to.equals("F")) {
             return (temp * 9 / 5) + 32;
-        } else if (converting_from.equals("C") && converting_to.equals("K")) {
+        } else if (temperature_unit.equals("C") && convert_to.equals("K")) {
             return (temp + 273.15);
-        } else if (converting_from.equals("F") && converting_to.equals("C")) {
+        } else if (temperature_unit.equals("F") && convert_to.equals("C")) {
             return (temp - 32) * 5 / 9;
-        } else if (converting_from.equals("F") && converting_to.equals("K")) {
+        } else if (temperature_unit.equals("F") && convert_to.equals("K")) {
             return (temp - 32) * 5 / 9 + 273.15;
-        } else if (converting_from.equals("K") && converting_to.equals("F")) {
+        } else if (temperature_unit.equals("K") && convert_to.equals("F")) {
             return (temp - 273.15) * 9 / 5 + 32;
-        } else if (converting_from.equals("K") && converting_to.equals("C")) {
+        } else if (temperature_unit.equals("K") && convert_to.equals("C")) {
             return (temp - 273.15);
         }
         return temp;

@@ -5,19 +5,24 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner user_input = new Scanner(System.in);
 
-		String converting_from;
-		System.out.print("Temp you're converting from [C]elsius, [F]ahrenheit, [K]elvin: ");
-		converting_from = user_input.nextLine();
+		String input;
+		System.out.print("INPUT (ex: 0F to C) -> ");
+		//ex: #f variable; "converting_from"
+		input = user_input.next();
 
-		String converting_to;
-		System.out.print("Temp you're converting to [C]elsius, [F]ahrenheit, [K]elvin: ");
-		converting_to = user_input.nextLine();
+		//the temp of the converting from unit
+		double temp = Double.valueOf(input.substring(0, input.length() - 1));
 
-		Integer temp;
-		System.out.print("Temperature: ");
-		temp = user_input.nextInt();
+		//the unit of converting from
+		Character temp_unit = Character.toUpperCase(input.charAt(input.length() -1));
 
-		TemperatureConverter converter = new TemperatureConverter(converting_from, converting_to);
+		// the "to" part
+		user_input.next();
+
+		// the "converting to" unit
+		String converting_to = user_input.next().toUpperCase();
+
+		TemperatureConverter converter = new TemperatureConverter(temp_unit.toString(), converting_to.toString());
 		System.out.print(converter.convert(temp));
 	}
 }
